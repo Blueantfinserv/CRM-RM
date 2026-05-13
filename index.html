@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blueant Login</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="theme-color" content="#1677ff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+  </head>
+
+  <body>
+    <div class="phone-frame">
+      <div class="login-card">
+        <img src="web-logo.png" class="logo" />
+        <h2>Login to Your Work App</h2>
+
+        <div class="input-group">
+          <span class="icon">📞</span>
+          <input type="text" id="mobile" placeholder="Mobile Number" />
+        </div>
+
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input type="password" id="password" placeholder="Password" />
+          <span class="show" onclick="togglePassword()">Show</span>
+        </div>
+
+        <button onclick="login()">View Your Work</button>
+
+        <p class="version">App Version 1.2</p>
+      </div>
+    </div>
+
+    <!-- SERVICE WORKER -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js");
+      }
+    </script>
+
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Leads</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="today.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader-overlay" id="loader">
+  <div class="spinner"></div>
+</div>
+
+<!-- BACKGROUND -->
+<div class="bg-layer"></div>
+
+<!-- FIXED TOP -->
+<div class="fixed-top">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="title-section">
+      <h2 class="page-title" id="pageTitle">My Tasks</h2>
+      <p id="date" class="page-date"></p>
+    </div>
+    <img src="web-logo.png" class="logo" alt="Logo">
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Search...">
+    <button class="new-lead-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdUdBmMA2M3Mj5rLl9cwoBjemCBy5hgAgGEke4B9siRNq-sGw/viewform')">Blank Form</button>
+   <button class="new-lead-btn ser-req-btn"
+onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdZ0-RkLA3m6S15zoA2Y6CUXpORcYdlK_8MRk3dU0NrHhcOUw/viewform?pli=1&pli=1.')">
+  Service Req
+</button>
+  </div>
+
+
+  <!-- APP HEAD: USER SELECTOR TABS (visible only for ARYAN) -->
+  <div class="user-tabs-wrap" id="userTabs" style="display: none;"></div>
+
+  <!-- MAIN TABS -->
+  <div class="filter-strip">
+    <div class="tab-bar" role="tablist">
+      <div class="tab-slider" id="filterSlider"></div>
+
+      <button type="button" class="tab-button active" data-filter="today" id="tabToday">
+        Today
+      </button>
+
+      <button type="button" class="tab-button" data-filter="pending" id="tabPending">
+        Pending
+      </button>
+
+      <button type="button" class="tab-button" data-filter="pending90" id="tabPendingExtended" hidden>
+        90D Pending
+      </button>
+
+      <button type="button" class="tab-button" data-filter="all" id="tabAll">
+        All Clients
+      </button>
+    </div>
+
+    <!-- SUB BUTTONS -->
+    <div class="sub-filter-buttons" id="subFilters" style="display: flex;">
+
+      <button type="button" class="sub-filter-btn" data-type="interaction">
+        Next Interaction
+      </button>
+
+      <button type="button" class="sub-filter-btn" data-type="followup">
+        Next Follow-up
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- SCROLL AREA -->
+<div class="list-wrapper">
+  <div class="pull-indicator" id="pullText"></div>
+  <div id="list"></div>
+</div>
+
+<script src="today.js" defer></script>
+</body>
+</html>
